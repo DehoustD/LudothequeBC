@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="fr-BE">
+
+<head>
+    <meta charset="utf-8">
+    <title>La base des formulaires.</title>
+</head>
+
+<body>
+    <!--Lien d'évitement vers le contenu principal pour passer le menu-->
+    <div id="skip">
+        <a href="#main">Aller au contenu</a>
+    </div>
+
+    <!--Header où se trouve le logo, la tagline-->
+    <header role="banner">
+    </header>
+    <!--fin Header-->
+
+    <!--Navigation principale à placer dans une liste ul>li-->
+    <nav role="navigation">
+    </nav>
+    <!--Fin navigation principale-->
+
+    <!--Contenu principal-->
+    <main role="main" id="main" tabindex="-1">
+
+        <h1>La base des formulaires.</h1>
+
+        <form name="inscription" id="inscription" method="post" action="">
+            <fieldset>
+                <legend>Vos coordonnées :</legend>
+                <p>
+                    <label for="nom">Nom :</label>
+                    <input type="text" name="nom" autocomplete="family-name" id="nom" placeholder="Champ obligatoire" required autofocus>
+                </p>
+                <p>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom">
+                </p>
+                <p>
+                    <label for="email">E-Mail : (ex : jean.dupont@gmail.com)</label>
+                    <input type="email" name="email" id="email">
+                </p>
+                <p>
+                    <label for="pays">Pays :</label>
+                    <select name="pays" id="pays">
+                        <optgroup label="Europe">
+                            <option value="belgique" selected="selected">Belgique</option>
+                            <option value="france">France</option>
+                            <option value="allemagne">Allemagne</option>
+                        </optgroup>
+                        <optgroup label="Amérique du nord">
+                            <option value="etatsunis">États-unis</option>
+                            <option value="canada">Canada</option>
+                        </optgroup>
+                        <optgroup label="Asie">
+                            <option value="chine">Chine</option>
+                            <option value="japon">Japon</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <p>
+                    <label for="naissance">Date de naissance : (ex: jj/mm/aaaa)</label>
+                    <input type="date" name="naissance" id="naissance">
+                </p>
+                <p>
+                    <label for="ci">Copie carte d'identité (word ou pdf)</label>
+                    <input type="file" name="ci" id="ci" required accept=".doc, .docx, .pdf">
+                </p>
+            </fieldset>
+            
+            <br aria-hidden="true">
+
+            <fieldset>
+                <legend>Thèmes souhaités</legend>
+                <input type="checkbox" id="theme1" name="theme" value="sport">
+                <label for="theme1">Sport</label>
+                <input type="checkbox" id="theme2" name="theme" value="cuisine">
+                <label for="theme2">Cuisine</label>
+                <input type="checkbox" id="theme3" name="theme" value="relax">
+                <label for="theme3">Relax</label>
+            </fieldset>
+
+            <br aria-hidden="true">
+
+            <fieldset>
+                <legend>Type d'abonnement souhaité</legend>
+                <p>
+                    <input type="radio" name="periode" id="perdiodeH" value="hebdo" checked>
+                    <label for="periodeH">Newsletter hebdomadaire</label>
+
+                    <br aria-hidden="true">
+
+                    <input type="radio" name="periode" id="perdiodeM" value="mensu">
+                    <label for="periodeM">Newsletter mensuelle</label>
+
+                    <br aria-hidden="true">
+
+                    <input type="radio" name="periode" id="perdiodeT" value="trime">
+                    <label for="periodeT">Newsletter trimestrielle</label>
+                </p>
+            </fieldset>
+
+            <br aria-hidden="true">
+
+            <fieldset>
+                <legend>Modalités de reception</legend>
+                <p>
+                    <label for="duree">Durée de l'abonnement en mois (de 3 à 12).</label>
+                    <input type="number" id="duree" name="duree" min="3" max="12">
+                </p>
+                <p>
+                    <label for="heure">Heure de réception souhaitée</label>
+                    <input type="time" id="heure" name="heure">
+                </p>
+                <p>
+                    <label for="importance">Degrès d'importance (0 à 100 par tranche de 10)</label>
+                    <input type="range" name="importance" id="importance" min="0" max="100" step="10" value="0">
+                </p>
+            </fieldset>
+
+            <br aria-hidden="true">
+
+            <fieldset>
+                <input type="submit" name="valid" id="valid" value="Je m'abonne !">
+            </fieldset>
+
+        </form>
+
+    </main>
+    <!--Fin contenu principal-->
+
+    <!--Footer où se trouvent des infos du site : mentions légales...-->
+    <footer role="contentinfo">
+    </footer>
+    <!--Fin footer-->
+</body>
+
+</html>
