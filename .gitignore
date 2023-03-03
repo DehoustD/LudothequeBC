@@ -1,8 +1,3 @@
 .DS_Store
-ludotheque\target
-ludotheque\target\*
 ludotheque/target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
+ludotheque/pom.xml
