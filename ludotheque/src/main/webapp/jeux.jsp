@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ludotheque - Accueil</title>
+	<title>Ludotheque - Jeux</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -17,7 +17,7 @@
 
 	<main role="main" id="main" tabindex="-1">
 
-		<h2>Ludotheque accueil</h2>
+		<h2>Jeux</h2>
 
 		<p>Bienvenue !</p>
 
