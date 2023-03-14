@@ -55,7 +55,7 @@ public class Livre {
             PreparedStatement pstmt = con.prepareStatement(
                     "INSERT INTO livre (anneePublication, langue, titre) VALUES (?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
-            pstmt.setInteger(1, _livre.getAnneePublication());
+            pstmt.setInt(1, _livre.getAnneePublication());
             pstmt.setString(2, _livre.getTitre());
             pstmt.setString(3, _livre.getLangue());
 

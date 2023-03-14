@@ -1,6 +1,5 @@
 import java.sql.*;
-import java.util.Date;
-
+import java.util.Date;;
 public class Auteur {
 
     // propriétés
@@ -127,11 +126,11 @@ public class Auteur {
             PreparedStatement pstmt = con.prepareStatement(
                     "UPDATE auteurSEt nom =?, prenom =?, nationalite =?, date_naissance =? WHERE id =?");
             pstmt.setString(1, _Auteur.getNom());
-            pstmt.setString(1, _Auteur.getPrenom());
+            pstmt.setString(2, _Auteur.getPrenom());
             pstmt.setString(3, _Auteur.getNationalite());
-            java.sql.Date dateSql = new java.sql.Date(_auteur.date_naissance.getTime());
+            java.sql.Date dateSql = new java.sql.Date(_Auteur.date_naissance.getTime());
             pstmt.setDate(4, dateSql);
-            pstmt.setinteger(5, _Auteur.getId());
+            pstmt.setInt(5, _Auteur.getId());
             int _nbEnregistrement = pstmt.executeUpdate();
             if (_nbEnregistrement == 1) {
                 System.out.println("L'auteur a été modifié.");
@@ -151,7 +150,7 @@ public class Auteur {
             try (ClassDb db = new ClassDb()) {
                 Connection con = db.getConnection();
                 PreparedStatement pstmt = con.prepareStatement("DELETE FROM auteur WHERE id =?");
-                pstmt.setinteger(1, _id);
+                pstmt.setInt(1, _id);
 
                 int _rowsDeleted = pstmt.executeUpdate();
 
