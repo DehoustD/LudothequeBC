@@ -13,7 +13,7 @@
 	<div id="skip"><a href="#main">Aller au contenu</a></div>
 
 	<jsp:include page="header.html" />
-	<jsp:include page="navbar.html" />
+	<jsp:include page="navBar.html" />
 
 	<main role="main" id="main" tabindex="-1">
 
