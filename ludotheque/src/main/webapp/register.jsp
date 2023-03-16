@@ -53,7 +53,14 @@ pageEncoding="UTF-8" %>
 
 			<p>
 
-				<label for="mp">Mot de passe :</label>
+				<label for="mp">Tapez votre mot de passe :</label>
+
+				<input type="password" name="mp" id="mp" required>
+			</p>
+
+			<p>
+
+				<label for="mp">Retapez votre mot de passe :</label>
 
 				<input type="password" name="mp" id="mp" required>
 			</p>
@@ -61,16 +68,14 @@ pageEncoding="UTF-8" %>
 
 		<fieldset>
 
-			<h2>Pour le téléchargement possible des livres audio, êtes-vous déficients visuels ?</h2>
+			<h2>Pour le téléchargement possible des livres audio, êtes-vous déficients visuels ? Si oui, préparez dans vos fichiers la copie de votre carte qui le prouve !!</h2>
 
 		<p>
 
-			<input type="radio" name="vue" value="oui">Oui
+			Oui<input type="radio" name="vue" value="oui">
 
-			<input type="radio" name="vue" value="non">Non
+			Non<input type="radio" name="vue" value="non">
 		</p>
-
-		
 
 
 	</fieldset>
