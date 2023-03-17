@@ -45,9 +45,9 @@ public class Main {
                 String newDateNaissanceAuteur = input.nextLine();
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                 java.util.Date newDateNaissance = format.parse(newDateNaissanceAuteur);
-                Auteur updateInfo = new Auteur(newId, newNomAuteur, newPrenomAuteur, newNationaliteAuteur,
+                Auteur updateAuteur = new Auteur(newId, newNomAuteur, newPrenomAuteur, newNationaliteAuteur,
                         newDateNaissance);
-                Auteur.UpdateAuteur(updateInfo);
+                Auteur.UpdateAuteur(updateAuteur);
 
             } else if (choiceAuteur == 3) {
                 System.out.println("Saisissez l'id de l'auteur a supprimer.");
