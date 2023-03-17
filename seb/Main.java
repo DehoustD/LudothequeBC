@@ -1,6 +1,4 @@
-import java.util.Date;
 import java.util.Scanner;
-import java.sql.*;
 import java.text.SimpleDateFormat;
 
 public class Main {
@@ -124,6 +122,46 @@ public class Main {
                 Livre.DisplayLivre(deleteLivre);
                 Livre.DeleteLivre(id);
                 Livre.DisplayLivre(id);
+
+            }
+
+        }
+
+        else if (choice == 3) {
+            System.out
+                    .println("Entrez 1 pour ajouter un thème, 2 pour modifier un thème ou 3 pour supprimer un thème.");
+            int choiceTheme = input.nextInt();
+            input.nextLine();
+            if (choiceTheme == 1) {
+                System.out.println("Saisissez le libellé du thème que vous souhaitez ajouter.");
+                String libelleTheme = input.nextLine();
+                Theme newTheme = new Theme(null, libelleTheme);
+                Theme.InsertTheme(newTheme);
+                Theme.DisplayTheme(newTheme);
+
+            } else if (choiceTheme == 2) {
+                System.out.println("Saisissez l'id du thème que vous souhaitez modifier.");
+                Theme.DisplayTheme(input.nextInt());
+                System.out.println("Saisissez l'id.");
+                Integer newId = input.nextInt();
+                input.nextLine();
+                System.out.println("saisissez le libellé");
+                String newLibelleTheme = input.nextLine();
+                Theme updateTheme = new Theme(newId, newLibelleTheme);
+                Theme.UpdateTheme(updateTheme);
+                Theme.DisplayTheme(updateTheme);
+            } else if (choiceTheme == 3) {
+                System.out.println("Saisissez l'id du thème à supprimer.");
+                Theme.DisplayTheme(input.nextInt());
+                System.out.println("Saisissez l'id.");
+                Integer themeId = input.nextInt();
+                input.nextLine();
+                System.out.println("Saisissez le libellé.");
+                String libelleTheme = input.nextLine();
+                Theme deleteTheme = new Theme(themeId, libelleTheme);
+                Theme.DisplayTheme(deleteTheme);
+                Theme.DeleteTheme(themeId);
+                Theme.DisplayTheme(themeId);
 
             }
 

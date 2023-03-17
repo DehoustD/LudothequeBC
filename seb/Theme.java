@@ -33,12 +33,12 @@ public class Theme {
 
     // Methodes
     // ajout d'un thème
-    public static void InsertTheme(Theme _Theme) {
+    public static void InsertTheme(Theme _theme) {
         try (ClassDb db = new ClassDb()) {
             Connection con = db.getConnection();
             PreparedStatement pstmt = con.prepareStatement("INSERT INTO theme(libelle) VALUES(?) ",
-                    statement.RETURN_GENERATED_KEYS);
-            pstmt.setString(1, _Theme.getLibelle());
+                    Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, _theme.getLibelle());
 
             int _nbEnregistrement = pstmt.executeUpdate();
             if (_nbEnregistrement == 1) {
@@ -47,7 +47,7 @@ public class Theme {
 
                 if (rs.next()) {
                     Integer id = rs.getInt("insert_id");
-                    _Theme.id = id;
+                    _theme.id = id;
                 }
 
             } else {
@@ -57,21 +57,40 @@ public class Theme {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+    }
+
+    // affichage du thème en fonction de son ID
+    public static void DisplayTheme(Integer _id) {
+        try (ClassDb db = new ClassDb()) {
+            Connection con = db.getConnection();
+            PreparedStatement pstmt = con.prepareStatement("SELECT id, libelle FROM theme WHERE id = ?");
+            pstmt.setInt(1, _id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                System.out.println(
+                        rs.getInt("id") + "\t\t" + rs.getString("libelle"));
+            } else {
+                System.out.println("Thème non trouvé");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     // affichage du thème
-    public static void DisplayTheme(Theme _Theme) {
-        System.out.println(_Theme.toString());
+    public static void DisplayTheme(Theme _theme) {
+        System.out.println(_theme.toString());
 
     }
 
     // mise à jour du thème
-    public static void UpdateTheme(Theme _Theme) {
-        try (ClassDb db = new classDb()) {
+    public static void UpdateTheme(Theme _theme) {
+        try (ClassDb db = new ClassDb()) {
             Connection con = db.getConnection();
             PreparedStatement pstmt = con.prepareStatement("UPDATE theme SET libelle =? WHERE id=?");
-            pstmt.setString(1, _Theme.getLibelle());
-            pstmt.setInteger(2, _Theme.getId());
+            pstmt.setString(1, _theme.getLibelle());
+            pstmt.setInt(2, _theme.getId());
             int _nbEnregistrement = pstmt.executeUpdate();
             if (_nbEnregistrement == 1) {
                 System.out.println("Le thème a bien été modifié.");
@@ -91,7 +110,7 @@ public class Theme {
             try (ClassDb db = new ClassDb()) {
                 Connection con = db.getConnection();
                 PreparedStatement pstmt = con.prepareStatement("DELETE FROM theme WHERE id =?");
-                pstmt.setInteger(1, _id);
+                pstmt.setInt(1, _id);
                 int _rowsDeleted = pstmt.executeUpdate();
                 if (_rowsDeleted == 1) {
                     System.out.println("Le thème a bien été supprimé.");
