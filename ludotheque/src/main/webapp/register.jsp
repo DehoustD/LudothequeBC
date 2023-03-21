@@ -74,7 +74,7 @@ pageEncoding="UTF-8" %>
 
 			Oui<input type="radio" name="vue" value="oui">
 
-			Non<input type="radio" name="vue" value="non">
+			Non<input type="radio" name="vue" value="non" checked>
 		</p>
 
 
