@@ -1,4 +1,25 @@
-bonjour <%= request.getParameter("prenom")%>
+<%
+String prenom = request.getParameter("prenom");
+
+String nom = request.getParameter("nom");
+
+String mPasse = request.getParameter("mp");
+
+String mPConfirm = request.getParameter("mp1");
+
+if (mPasse.equals(mPConfirm)) {
+
+out.println("Bonjour " + prenom + " " + nom);
+}
+else {
+
+	out.println("Vos mots de passe sont différents ! Veuillez recommencer !\n Cliquer sur ce lien pour recommencer");
+%>
+
+<a href="register.jsp">Changer le mot de passe</a>
+<%
+}
+%>
 <p> bienvenue sur notre site !</p>
 
 <%

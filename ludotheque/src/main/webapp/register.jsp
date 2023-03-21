@@ -60,9 +60,9 @@ pageEncoding="UTF-8" %>
 
 			<p>
 
-				<label for="mp">Retapez votre mot de passe :</label>
+				<label for="mp1">Retapez votre mot de passe :</label>
 
-				<input type="password" name="mp" id="mp" required>
+				<input type="password" name="mp1" id="mp1" required>
 			</p>
 		</fieldset>
 
@@ -83,7 +83,8 @@ pageEncoding="UTF-8" %>
 		<fieldset>
 
 			<input type="submit" name="valid" id="valid" value="Je m'inscris">
-		</fieldset>
+
+</fieldset>
 
 	</form>
 
