@@ -17,11 +17,16 @@ else {
 %>
 
 <a href="register.jsp">Changer le mot de passe</a>
+
 <%
 }
 %>
 <p> bienvenue sur notre site !</p>
 
+<% String email = request.getParameter("email");
+
+out.println("Votre e-mail est " + email);
+%>
 <%
 
 if (request.getParameter("vue").equals("oui")) {

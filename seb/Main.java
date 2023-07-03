@@ -1,4 +1,4 @@
-import java.util.Scanner;
+mimport java.util.Scanner;
 import java.text.SimpleDateFormat;
 
 public class Main {
